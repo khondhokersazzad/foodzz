@@ -1,6 +1,20 @@
 import Image from "next/image";
 import React from "react";
 
+export async function generateMetadata ({params}){
+  const {id} = await params;
+  const res = await fetch(
+    ` https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`,
+  );
+  const {details = {}} = await res.json();
+
+  return{
+    title : details.title,
+    
+  }
+
+}
+
 const singleFoods = async (id) => {
   const res = await fetch(
     ` https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`,
@@ -9,6 +23,8 @@ const singleFoods = async (id) => {
 
   return data.details;
 };
+
+
 
 const FoodDetails = async ({ params }) => {
   const { id } = await params;

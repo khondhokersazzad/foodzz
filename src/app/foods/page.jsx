@@ -14,7 +14,10 @@ const getFoods = async (search) => {
   );
   return filterFoods;
 };
-
+export const metadata = {
+  title: {absolute : "All Foods"},
+  description: "A Restaurant food delevery app",
+};
 const FoodsPage = async ({searchParams}) => {
   const {search = ""} = await searchParams;
   

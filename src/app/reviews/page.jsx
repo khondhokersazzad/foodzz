@@ -7,6 +7,11 @@ const getReviews = async () =>{
   return data.reviews || [];
 }
 
+export const metadata = {
+  title: "All Reviews",
+  description: "A Restaurant food delevery app",
+};
+
 const page = async () => {
   const reviews = await getReviews();
   console.log(reviews);
