@@ -17,7 +17,7 @@ const ReviewCards = ({ review }) => {
                 alt={review.user}
                 fill
                 sizes="40px"
-                unoptimized
+                
                 className="object-cover"
               />
             </div>
